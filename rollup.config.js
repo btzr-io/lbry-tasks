@@ -1,12 +1,11 @@
 import path from 'path';
-import node_resolve from '@rollup/plugin-node-resolve';
-import babel from '@rollup/plugin-babel';
+import alias from '@rollup/plugin-alias'
+import babel from '@rollup/plugin-babel';;
 import hotcss from 'rollup-plugin-hot-css';
-import commonjs from 'rollup-plugin-commonjs-alternate';
-import static_files from 'rollup-plugin-static-files';
-import { terser } from 'rollup-plugin-terser';
 import refresh from 'rollup-plugin-react-refresh';
-import alias from '@rollup/plugin-alias';
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from 'rollup-plugin-commonjs-alternate';
+import { terser } from 'rollup-plugin-terser';
 
 const root = path.resolve(__dirname);
 
@@ -34,38 +33,21 @@ let config = {
         env(),
         alias({
             entries: [
-                { find: '@', replacement: path.resolve(root, 'src/react-app') }
+                { find: '@app', replacement: path.resolve(root, 'src/react-app') }
             ]
+        }),
+        babel({
+            babelHelpers: 'bundled',
+            exclude: 'node_modules/**'
         }),
         hotcss({
             hot: process.env.NODE_ENV === 'development',
             filename: 'styles.css'
         }),
-        babel({
-            exclude: 'node_modules/**'
-        }),
-        node_resolve(),
+        resolve(),
         commonjs(),
         process.env.NODE_ENV === 'development' && refresh()
     ]
-}
-
-if (process.env.NODE_ENV === 'production') {
-    config.input = './src/react-app/index.js';
-    config.external = [
-        'react',
-        'react-dom',
-    ];
-
-    config.plugins = config.plugins.concat([
-        terser({
-            compress: {
-                global_defs: {
-                    module: false
-                }
-            }
-        })
-    ]);
 }
 
 export default config;

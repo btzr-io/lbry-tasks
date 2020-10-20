@@ -5,7 +5,7 @@ const backgroundId = "grid"
 
 function Circle ({ gridSpacing = 36, gridDotSize = 2 }) {
 
-  const position = gridDotSize / 2 + gridSpacing / 2
+  const position = gridDotSize / 2 
 
   return (
     <circle

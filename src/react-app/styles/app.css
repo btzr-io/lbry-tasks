@@ -1,15 +1,18 @@
-html, body, .app {
+html, body, #app, .app {
   height: 100%;
   width: 100%;
   margin: 0;
 }
 
 html, body {
-    background: #191919;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #191919;
+  color: #FFF;
+  font-family: 'Inter', sans-serif;
 }
 
 .circle {
-  fill: #383838;
+  fill: rgba(255, 255, 255, 0.4);
 }
 
 .grid {
@@ -24,12 +27,30 @@ html, body {
 }
 
 .card {
-  width: 240px;
-  height: 240px;
+  width: 276px;
+  height: 276px;
   background: #2D2D2D;
   position: absolute;
-  margin: 120px;
-  border-radius: 16px;
-  /* Shadow 16dp */
+  margin: 60px;
+  border-radius: 8px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.card_header {
+  padding: 16px;
+  border-bottom: 2px solid #191919;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 20px 20px 0 0;
+}
+
+.connection {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: calc(50% - 11px);
+  bottom: -11px;
+  border: 6px solid #2D2D2D;
+  border-radius: 20px;
+  background: #191919;
 }
