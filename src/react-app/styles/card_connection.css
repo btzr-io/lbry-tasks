@@ -63,14 +63,12 @@
   bottom: calc(-1 * var(--card_connection_radius));
   border-bottom-left-radius: calc(var(--card_connection_radius) * 2);
   border-bottom-right-radius: calc(var(--card_connection_radius) * 2);
-  box-shadow: 0 5px 4px rgba(0,0,0,0.3);
 }
 
 .card_connection--top {
   top: calc(-1 * var(--card_connection_radius));
   border-top-left-radius: calc(var(--card_connection_radius) * 2);
   border-top-right-radius: calc(var(--card_connection_radius) * 2);
-  box-shadow: 0 -5px 4px rgba(0,0,0,0.3);
 }
 
 .card_connection--left {

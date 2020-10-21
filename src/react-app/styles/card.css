@@ -9,12 +9,11 @@
 
 .card {
   width: 276px;
-  min-height: calc(var(--card_header_height) * 2);
+  min-height: ;
   background: var(--card_bg);
   position: relative;
   margin: 64px;
   border-radius: 8px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 .card_header {
@@ -24,7 +23,6 @@
   flex-direction: row;
   margin: 0 0.4em;
   padding: 0 0.8em;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.4);
   height: var(--card_header_height);
   border-radius: 8px 8px 0 0;
   box-sizing: border-box;
