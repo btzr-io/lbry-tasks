@@ -18,30 +18,61 @@ html, body {
 .grid {
   height: 100%;
   width: 100%;
+}
+
+.grid > svg {
+  height: 100%;
+  width: 100%;
   position: absolute;
 }
 
-.grid svg {
+.graph-view {
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
 }
 
+
 .card {
   width: 276px;
-  height: 276px;
+  min-height: 128px;
   background: #2D2D2D;
-  position: absolute;
-  margin: 60px;
+  position: relative;
+  margin: 64px;
   border-radius: 8px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
 .card_header {
-  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 0 0.8em;
   border-bottom: 2px solid #191919;
-  font-size: 16px;
+  height: 64px;
+  border-radius: 8px 8px 0 0;
+  box-sizing: border-box;
+}
+
+.card_header_title {
+  font-size: 0.98em;
   font-weight: 600;
-  border-radius: 20px 20px 0 0;
+}
+
+.card_header_subtitle {
+  font-size: 0.88em;
+  color: #CCC;
+  margin: 0.2em 0;
+}
+
+.icon--card {
+  padding: 0.4em;
+  border-radius: 24px;
+  background: #00cec9;
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .connection {

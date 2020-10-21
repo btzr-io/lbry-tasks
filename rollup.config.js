@@ -4,7 +4,7 @@ import babel from '@rollup/plugin-babel';;
 import hotcss from 'rollup-plugin-hot-css';
 import refresh from 'rollup-plugin-react-refresh';
 import resolve from '@rollup/plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs-alternate';
+import commonjs from '@rollup/plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
 
 const root = path.resolve(__dirname);
@@ -25,7 +25,7 @@ let config = {
     input: './src/react-app/main.js',
     output: {
         dir: 'dist',
-        format: 'esm',
+        format: 'es',
         entryFileNames: '[name].[hash].js',
         assetFileNames: '[name].[hash][extname]'
     },

@@ -1,15 +1,17 @@
 import React from 'react';
 import Icon from "@mdi/react";
-import { mdiDog } from "@mdi/js";
+import { mdiImport } from "@mdi/js";
 
-console.info(Icon, mdiDog)
 
 function Card () {
     return (
         <div className="card">
           <div className="card_header">
-            <div className="card_title">Title</div>
-            { /* }<Icon path={mdiDog} /> */ }
+            <div className="card_header_data">
+             <div className="card_header_title">Tweet publish</div>
+              <div className="card_header_subtitle">on publish</div>
+             </div>
+            <Icon path={mdiImport} size={1.2} className={"icon--card"} />
           </div>
           <div className="connection" />
         </div>

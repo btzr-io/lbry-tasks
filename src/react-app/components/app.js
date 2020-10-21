@@ -8,8 +8,11 @@ const GRID_DOT_SIZE = 2
 function App () {
     return (
         <div className="app">
-          <Grid gridSpacing={GRID_SPACING} gridDotSize={GRID_DOT_SIZE}/>
-          <Card />
+          { /* <Grid gridSpacing={GRID_SPACING} gridDotSize={GRID_DOT_SIZE}/> */ }
+          <div className="graph-view">
+            <Card />
+              <Card />
+          </div>
         </div>
     );
 }
