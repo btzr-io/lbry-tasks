@@ -1,0 +1,84 @@
+.card_connection {
+  width: calc(var(--card_connection_radius) * 2);
+  height: var(--card_connection_radius);
+  position: absolute;
+  background: var(--card_bg);
+}
+
+.card_connection::after {
+  display: block;
+  position: absolute;
+  content: '';
+  background: rgba(255, 255, 255, 0.4);
+  height:  var(--card_connection_radius);
+  width:  var(--card_connection_radius);
+  border-radius: var(--card_connection_radius);
+}
+
+.card_connection[data-active="true"]::after {
+  background: var(--card_connection_active_bg);
+}
+.card_connection--top,
+.card_connection--bottom {
+  left: calc( 50% - var(--card_connection_radius));
+}
+
+.card_connection--left,
+.card_connection--right
+ {
+    top: calc(50% - var(--card_connection_radius));
+    width: var(--card_connection_radius);
+    height: calc(var(--card_connection_radius) * 2);
+}
+
+.card_connection--left {
+  left: calc( -1 * var(--card_connection_radius));
+}
+
+.card_connection--right {
+  right: calc( -1 * var(--card_connection_radius));
+}
+
+.card_connection--top::after,
+.card_connection--bottom::after,
+.card_connection--left::after {
+  left: calc(0.5 * var(--card_connection_radius));
+}
+
+.card_connection--right::after {
+  left: calc(-0.5 * var(--card_connection_radius));
+}
+
+.card_connection--top::after,
+.card_connection--left::after,
+.card_connection--right::after {
+  top: calc(0.5 * var(--card_connection_radius));
+}
+
+.card_connection--bottom::after{
+  top: calc(-0.5 * var(--card_connection_radius));
+}
+
+.card_connection--bottom {
+  bottom: calc(-1 * var(--card_connection_radius));
+  border-bottom-left-radius: calc(var(--card_connection_radius) * 2);
+  border-bottom-right-radius: calc(var(--card_connection_radius) * 2);
+  box-shadow: 0 5px 4px rgba(0,0,0,0.3);
+}
+
+.card_connection--top {
+  top: calc(-1 * var(--card_connection_radius));
+  border-top-left-radius: calc(var(--card_connection_radius) * 2);
+  border-top-right-radius: calc(var(--card_connection_radius) * 2);
+  box-shadow: 0 -5px 4px rgba(0,0,0,0.3);
+}
+
+.card_connection--left {
+  border-top-left-radius: calc(var(--card_connection_radius) * 2);
+  border-bottom-left-radius: calc(var(--card_connection_radius) * 2);
+}
+
+.card_connection--right {
+  border-top-right-radius: calc(var(--card_connection_radius) * 2);
+  border-bottom-right-radius: calc(var(--card_connection_radius) * 2);
+}
