@@ -1,0 +1,12 @@
+{
+  type: { type: "number", default: 0 },
+  title: { type: "string", default: "task" }
+  delayDate: { type: "string" }
+  delayTime: { type: "number", default: 0 }
+  cycle: {
+    time: { type: "number", default: 0 }
+    ticks: { type: "number", default: 1}
+  }
+  input: { type: "any" },
+  outpit: { type: "any"},
+}

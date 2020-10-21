@@ -2,8 +2,6 @@
   --card_bg: #2D2D2D;
   --card_connection_radius: 10px;
   --card_header_height: 72px;
-  --card_accent_color: #00cec9;
-  --card_connection_active_bg:  var(--card_accent_color);
 }
 
 
@@ -42,6 +40,6 @@
 .icon--card {
   padding: 0.4em;
   border-radius: 24px;
-  background: var(--card_accent_color);
+  background: var(--accent_color);
   color: rgba(0, 0, 0, 0.8);
 }

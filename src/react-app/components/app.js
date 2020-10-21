@@ -6,8 +6,9 @@ function App () {
         <div className="app">
           <div className="panel panel--side panel--left" />
           <div className="panel graph-view">
-            <Card />
-              <Card />
+            <Card type="EVENT" />
+            <Card type="WAIT" />
+            <Card type="CYCLE" />
           </div>
           <div className="panel panel--side panel--right" />
         </div>

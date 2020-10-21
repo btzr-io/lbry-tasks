@@ -36,3 +36,20 @@ html, body {
   flex-grow: 1;
   overflow: auto;
 }
+
+
+*[data-color="blue"] {
+  --accent_color: #48dbfb;
+}
+*[data-color="yellow"] {
+  --accent_color:  #fffa65;
+}
+
+
+*[data-color="green"] {
+  --accent_color:  #1dd1a1;
+}
+
+*[data-color="purple"] {
+  --accent_color: #cd84f1;
+}

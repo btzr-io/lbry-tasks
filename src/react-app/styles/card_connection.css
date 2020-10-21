@@ -16,7 +16,7 @@
 }
 
 .card_connection[data-active="true"]::after {
-  background: var(--card_connection_active_bg);
+  background: var(--accent_color);
 }
 .card_connection--top,
 .card_connection--bottom {
