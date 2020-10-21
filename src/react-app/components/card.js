@@ -20,7 +20,7 @@ function Card ({ type = "WAIT" }) {
 
 
     return (
-        <div className="card" data-color={color}>
+        <div className="card" data-color={color} tabIndex={0}>
           <div className="card_header">
             <div className="card_header_data">
              <div className="card_header_title">{title || "Task"}</div>

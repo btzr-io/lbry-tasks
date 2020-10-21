@@ -10,8 +10,15 @@
   min-height: ;
   background: var(--card_bg);
   position: relative;
-  margin: 64px;
+  margin: var(--card_header_height);
   border-radius: 8px;
+  box-sizing: border-box;
+  border: 4px solid transparent;
+}
+
+.card:focus {
+  border-color: var(--accent_color);
+  outline: 0;
 }
 
 .card_header {
@@ -33,7 +40,7 @@
 
 .card_header_subtitle {
   font-size: 0.88em;
-  color: #CCC;
+  color: var(--subtitle-color);
   margin: 0.2em 0;
 }
 

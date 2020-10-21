@@ -11,6 +11,10 @@ html, body {
   font-family: 'Inter', sans-serif;
 }
 
+:root {
+  --subtitle-color: #CCC;
+}
+
 .app {
   display: flex;
   align-items: center;
