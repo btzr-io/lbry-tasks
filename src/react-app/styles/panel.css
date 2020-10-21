@@ -1,0 +1,15 @@
+.panel {
+  --panel_bg: #2D2D2D;
+}
+.panel {
+  min-width: 200px;
+  height: 100%;
+}
+
+.panel--left {
+  border-right: 2px solid  var(--panel_bg);
+}
+
+.panel--right {
+    border-left: 2px solid var(--panel_bg);
+}

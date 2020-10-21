@@ -1,18 +1,15 @@
 import React from 'react';
-import Grid from '@app/components/grid'
 import Card from '@app/components/card'
-
-const GRID_SPACING = 40
-const GRID_DOT_SIZE = 2
 
 function App () {
     return (
         <div className="app">
-          { /* <Grid gridSpacing={GRID_SPACING} gridDotSize={GRID_DOT_SIZE}/> */ }
-          <div className="graph-view">
+          <div className="panel panel--side panel--left" />
+          <div className="panel graph-view">
             <Card />
               <Card />
           </div>
+          <div className="panel panel--side panel--right" />
         </div>
     );
 }

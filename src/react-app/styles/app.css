@@ -11,6 +11,12 @@ html, body {
   font-family: 'Inter', sans-serif;
 }
 
+.app {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .circle {
   fill: rgba(255, 255, 255, 0.4);
 }
@@ -27,9 +33,6 @@ html, body {
 }
 
 .graph-view {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
+  flex-grow: 1;
+  overflow: auto;
 }
