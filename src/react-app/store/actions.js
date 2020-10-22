@@ -1,5 +1,6 @@
 import FuzzySearch from "fuzzy-search";
-
+import { UniqueID } from "@app/utils";
+import { TASK_STATUS } from "@app/constants/types";
 const actions = (store) => ({
   searchTasksByTitle: ({ tasks, searchResults }, text) => {
     const entries = Object.values(tasks);
@@ -14,6 +15,15 @@ const actions = (store) => ({
       // If input search is empty show everything
       return { searchResults: { ...searchResults, tasks: "show_all" } };
     }
+  },
+
+  createNewTask({ tasks }, title = "New task") {
+    const task = {
+      title,
+      id: UniqueID(),
+      status: TASK_STATUS.INACTIVE,
+    };
+    return { tasks: { ...tasks, [task.id]: task } };
   },
 });
 

@@ -1,5 +1,7 @@
 import React from "react";
 import Icon from "@mdi/react";
+import actions from "@app/store/actions";
+import { connect } from "unistore/react";
 import { TASK_STATUS, TASK_STATUS_TYPES } from "@app/constants/types";
 import { mdiPlusCircleOutline, mdiPlusCircle } from "@mdi/js";
 
@@ -18,7 +20,10 @@ function StatusButton({ status }) {
   );
 }
 
-function AddItemButton() {
+const AddItemButton = connect(
+  [],
+  actions
+)(({ createNewTask }) => {
   const [focus, setFocus] = React.useState(false);
   const [hover, setHover] = React.useState(false);
   const handleHover = () => {
@@ -37,12 +42,17 @@ function AddItemButton() {
     setFocus(false);
   };
 
+  const handleClick = () => {
+    createNewTask();
+  };
+
   return (
     <button
       className="button button--add"
       onMouseEnter={handleHover}
       onFocus={handleFocus}
       onBlur={handleNotFocus}
+      onClick={handleClick}
       onMouseLeave={handleNotHover}
     >
       <Icon
@@ -52,7 +62,7 @@ function AddItemButton() {
       />
     </button>
   );
-}
+});
 
 function SearchResultItem({ title, status }) {
   return (
