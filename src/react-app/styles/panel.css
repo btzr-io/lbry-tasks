@@ -54,6 +54,25 @@ text-overflow: ellipsis;
 }
 
 .status_icon {
-  margin-right: 0.8em;
   color: var(--accent_color);
+}
+
+.status_button {
+  margin: 0;
+  border: 0;
+  cursor: pointer;
+  background: 0;
+  outline: 0;
+  appearance: none;
+  display: flex;
+  align-items: center;
+  color: inherit;
+  margin-right: 0.8em;
+  text-align: center;
+  opacity: 0.75;
+}
+
+*:focus .status_button,
+.status_button:hover {
+  opacity: 1;
 }

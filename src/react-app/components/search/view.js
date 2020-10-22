@@ -3,13 +3,22 @@ import Icon from "@mdi/react";
 import { TASK_STATUS, TASK_STATUS_TYPES } from '@app/constants/types';
 
 
-function SearchResultItem({title, status}) {
+function StatusButton({status})  {
   const { icon, color } = TASK_STATUS_TYPES[status]
+  return (
+    <button className="status_button">
+      <Icon path={icon} data-color={color} size={1} className={"status_icon"} spin={status === TASK_STATUS.RUNING && 0.64} />
+    </button>
+  )
+}
+
+function SearchResultItem({title, status}) {
+
   return(
     <div className="panel_item" tabIndex={0}>
       <div className="item_data">
         <div className="item_title">
-         <Icon path={icon} data-color={color} size={1} className={"status_icon"} spin={status === TASK_STATUS.RUNING && 0.64} />
+         <StatusButton status={status} />
          <span>{title}</span>
         </div>
       </div>
