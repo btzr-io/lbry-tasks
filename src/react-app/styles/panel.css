@@ -9,6 +9,16 @@
   overflow: auto;
 }
 
+.panel_header {
+  display: flex;
+  align-items: center;
+  margin: 2.8em 1.6em;
+}
+
+.icon--button {
+  margin-left: 1.6em;
+}
+
 .panel--left {
   max-width: 400px;
   border-right: 2px solid var(--card_bg);
@@ -56,22 +66,32 @@
   color: var(--accent_color);
 }
 
-.status_button {
+.button {
   margin: 0;
   border: 0;
   cursor: pointer;
   background: 0;
   outline: 0;
   appearance: none;
+  text-align: center;
+  color: inherit;
   display: flex;
   align-items: center;
-  color: inherit;
-  margin-right: 0.8em;
-  text-align: center;
   opacity: 0.75;
 }
 
-*:focus .status_button,
-.status_button:hover {
+.button:focus, .button:hover {
+  opacity: 1;
+}
+
+.button--add {
+  color: var(--label-color);
+}
+
+.button--status {
+  margin-right: 0.8em;
+}
+
+*:focus .button--status {
   opacity: 1;
 }

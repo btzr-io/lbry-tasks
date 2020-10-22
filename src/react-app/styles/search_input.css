@@ -2,10 +2,6 @@
   color: var(--subtitle-color);
   border: 2px solid rgba(255, 255, 255, 0.2);
   padding: 0.4em 0.8em;
-  margin-left: 1.2em;
-  margin-right: 1.2em;
-  margin-top: 2.8em;
-  margin-bottom: 2.8em;
   background: rgba(255, 255, 255, 0.025);
   border-radius: 1em;
   box-sizing: border-box;
