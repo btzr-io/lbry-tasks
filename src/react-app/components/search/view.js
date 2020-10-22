@@ -17,10 +17,17 @@ function SearchResultItem({title, status}) {
   )
 }
 
-function SearchResults({ results }) {
+function SearchResults({ entries, results }) {
   return (
     <div className="panel_items">
-     { results.tasks.map(({title, status }) => <SearchResultItem key={title} title={title} status={status} />) }
+     { results.tasks.map(id => {
+          const task = entries[id]
+          if (task) {
+              const { id, title, status } = task
+              return (<SearchResultItem key={id} title={title} status={status} />)
+          }
+      })
+     }
     </div>
   )
 }
@@ -50,11 +57,11 @@ function SearchInput({ onChange }) {
   )
 }
 
-function Search({ searchTasksByTitle, searchResults }) {
+function Search({ tasks, searchTasksByTitle, searchResults }) {
   return (
     <div>
       <SearchInput onChange={searchTasksByTitle} />
-      <SearchResults results={searchResults} />
+      <SearchResults entries={tasks} results={searchResults} />
     </div>
   )
 }

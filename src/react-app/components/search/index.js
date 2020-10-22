@@ -4,4 +4,4 @@ import { connect } from 'unistore/react';
 import actions from '@app/store/actions';
 
 
-export default connect(['searchResults'], actions ) ( Search );
+export default connect(['tasks', 'searchResults'], actions ) ( Search );
