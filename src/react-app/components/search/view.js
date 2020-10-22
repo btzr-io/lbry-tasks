@@ -27,15 +27,25 @@ function SearchResults({ results }) {
 
 function SearchInput({ onChange }) {
   const [text, setText] = React.useState('');
+  const [focus, setFocus] = React.useState(false);
+
   const handleInputChange = event => {
     const value = event.target.value;
     setText(value);
     onChange(value);
   }
 
+  const handleFocus = () => {
+    setFocus(true);
+  }
+
+  const handleBlur = () => {
+    setFocus(false)
+  }
+
   return (
-    <div className={"search_input"}>
-     <input type="text" value={text} onChange={handleInputChange} placeholder="Search..."/>
+    <div className={"search_input"} data-focus={focus}>
+     <input type="text" value={text} onChange={handleInputChange} onFocus={handleFocus} onBlur={handleBlur} placeholder="Search..."/>
     </div>
   )
 }

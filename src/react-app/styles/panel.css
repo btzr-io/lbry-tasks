@@ -5,6 +5,7 @@
   min-width: 200px;
   height: 100%;
   box-sizing: border-box;
+  overflow: auto;
 }
 
 .panel--left {
