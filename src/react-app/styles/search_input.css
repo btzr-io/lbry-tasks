@@ -1,0 +1,28 @@
+.search_input {
+  color: var(--subtitle-color);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 0.4em 0.8em;
+  margin-left: 1.2em;
+  margin-right: 1.2em;
+  margin-top: 2.8em;
+  margin-bottom: 1.8em;
+  background: rgba(255, 255, 255, 0.025);
+  border-radius: 1em;
+  box-sizing: border-box;
+}
+
+.search_input input {
+  color: inherit;
+  font-family: inherit;
+  border: 0;
+  background: 0;
+  width: 100%;
+
+}
+
+.search_input input:focus {
+  outline: 0;
+  border: 0;
+  box-shadow: 0;
+  appearance: none;
+}

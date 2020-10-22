@@ -12,7 +12,8 @@ html, body {
 }
 
 :root {
-  --subtitle-color: #CCC;
+  --subtitle-color: #CECECE;
+  --label-color: #858585;
 }
 
 .app {
@@ -49,6 +50,9 @@ html, body {
   --accent_color:  #fffa65;
 }
 
+*[data-color="red"] {
+  --accent_color: #fc5c65;
+}
 
 *[data-color="green"] {
   --accent_color:  #1dd1a1;

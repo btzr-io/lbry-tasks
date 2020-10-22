@@ -1,22 +1,12 @@
 import React from 'react';
+import Icon from "@mdi/react";
 import Card from '@app/components/card'
-
-
-function LeftPanel () {
-  return (
-    <div className="panel panel--side panel--left">
-     <div className="panel_items">
-       <div className="panel_item">Item 1</div>
-       <div className="panel_item">Item 2</div>
-     </div>
-    </div>
-  )
-}
+import TasksManager from '@app/components/tasksManager'
 
 function App () {
     return (
         <div className="app">
-          <LeftPanel />
+          <TasksManager />
           <div className="panel graph-view">
             <Card type="EVENT" />
             <Card type="WAIT" />

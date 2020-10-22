@@ -9,6 +9,9 @@ import { terser } from 'rollup-plugin-terser';
 
 const root = path.resolve(__dirname);
 
+
+const extensions = ['.js', '.jsx'];
+
 let env = function () {
     return {
         banner: `
@@ -27,7 +30,7 @@ let config = {
         dir: 'dist',
         format: 'es',
         entryFileNames: '[name].[hash].js',
-        assetFileNames: '[name].[hash][extname]'
+        assetFileNames: '[name].[hash][extname]',
     },
     plugins: [
         env(),
@@ -44,7 +47,7 @@ let config = {
             hot: process.env.NODE_ENV === 'development',
             filename: 'styles.css'
         }),
-        resolve(),
+        resolve({extensions}),
         commonjs(),
         process.env.NODE_ENV === 'development' && refresh()
     ]
