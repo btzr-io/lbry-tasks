@@ -19,6 +19,7 @@ function StatusButton({ status }) {
 }
 
 function AddItemButton() {
+  const [focus, setFocus] = React.useState(false);
   const [hover, setHover] = React.useState(false);
   const handleHover = () => {
     setHover(true);
@@ -28,16 +29,24 @@ function AddItemButton() {
     setHover(false);
   };
 
+  const handleFocus = () => {
+    setFocus(true);
+  };
+
+  const handleNotFocus = () => {
+    setFocus(false);
+  };
+
   return (
     <button
       className="button button--add"
       onMouseEnter={handleHover}
-      onFocus={handleHover}
-      onBlur={handleNotHover}
+      onFocus={handleFocus}
+      onBlur={handleNotFocus}
       onMouseLeave={handleNotHover}
     >
       <Icon
-        path={!hover ? mdiPlusCircleOutline : mdiPlusCircle}
+        path={!hover && !focus ? mdiPlusCircleOutline : mdiPlusCircle}
         size={1.2}
         className={"icon--button"}
       />

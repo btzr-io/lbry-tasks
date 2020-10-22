@@ -20,7 +20,7 @@ function Card({ type = "WAIT" }) {
     top: false,
     left: false,
     right: false,
-    bottom: true,
+    bottom: false,
   };
 
   const { icon, color, title } = CARD_TYPES[type];
