@@ -1,7 +1,7 @@
 import React from "react";
 import Icon from "@mdi/react";
 import { TASK_STATUS, TASK_STATUS_TYPES } from "@app/constants/types";
-import {mdiPlusCircleOutline, mdiPlusCircle } from "@mdi/js";
+import { mdiPlusCircleOutline, mdiPlusCircle } from "@mdi/js";
 
 function StatusButton({ status }) {
   const { icon, color } = TASK_STATUS_TYPES[status];
@@ -21,15 +21,21 @@ function StatusButton({ status }) {
 function AddItemButton() {
   const [hover, setHover] = React.useState(false);
   const handleHover = () => {
-    setHover(true)
-  }
+    setHover(true);
+  };
 
   const handleNotHover = () => {
-    setHover(false)
-  }
+    setHover(false);
+  };
 
   return (
-    <button className="button button--add" onMouseEnter={handleHover} onFocus={handleHover} onBlur={handleNotHover} onMouseLeave={handleNotHover}>
+    <button
+      className="button button--add"
+      onMouseEnter={handleHover}
+      onFocus={handleHover}
+      onBlur={handleNotHover}
+      onMouseLeave={handleNotHover}
+    >
       <Icon
         path={!hover ? mdiPlusCircleOutline : mdiPlusCircle}
         size={1.2}

@@ -80,7 +80,8 @@
   opacity: 0.75;
 }
 
-.button:focus, .button:hover {
+.button:focus,
+.button:hover {
   opacity: 1;
 }
 
