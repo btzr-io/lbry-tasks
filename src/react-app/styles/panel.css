@@ -1,8 +1,9 @@
 .panel {
-  --card_bg: #2D2D2D;
+  --card_bg: #2d2d2d;
 }
 .panel {
   min-width: 200px;
+
   height: 100%;
   box-sizing: border-box;
   overflow: auto;
@@ -10,12 +11,12 @@
 
 .panel--left {
   max-width: 400px;
-  border-right: 2px solid  var(--card_bg);
+  border-right: 2px solid var(--card_bg);
 }
 
 .panel--right {
   min-width: 200px;
-    border-left: 2px solid var(--card_bg);
+  border-left: 2px solid var(--card_bg);
 }
 
 .panel_items {
@@ -37,8 +38,6 @@
   color: var(--subtitle-color);
 }
 
-
-
 .item_title {
   display: flex;
   align-items: center;
@@ -46,10 +45,10 @@
 
 .item_title span {
   display: -webkit-box;
--webkit-line-clamp: 1;
--webkit-box-orient: vertical;
-overflow: hidden;
-text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
   max-width: 80%;
 }
 

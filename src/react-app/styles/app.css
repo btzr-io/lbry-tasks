@@ -1,18 +1,22 @@
-html, body, #app, .app {
+html,
+body,
+#app,
+.app {
   height: 100%;
   width: 100%;
   margin: 0;
 }
 
-html, body {
+html,
+body {
   font-family: Arial, Helvetica, sans-serif;
   background: #191919;
-  color: #FFF;
-  font-family: 'Inter', sans-serif;
+  color: #fff;
+  font-family: "Inter", sans-serif;
 }
 
 :root {
-  --subtitle-color: #CECECE;
+  --subtitle-color: #cecece;
   --label-color: #858585;
 }
 
@@ -42,12 +46,11 @@ html, body {
   overflow: auto;
 }
 
-
 *[data-color="blue"] {
   --accent_color: #48dbfb;
 }
 *[data-color="yellow"] {
-  --accent_color:  #fffa65;
+  --accent_color: #fffa65;
 }
 
 *[data-color="red"] {
@@ -55,7 +58,7 @@ html, body {
 }
 
 *[data-color="green"] {
-  --accent_color:  #1dd1a1;
+  --accent_color: #1dd1a1;
 }
 
 *[data-color="purple"] {

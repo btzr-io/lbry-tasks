@@ -1,5 +1,5 @@
 module.exports = {
-    contentBase: './src/react-app/public',
-    port: 8080,
-    hot: true
+  contentBase: "./src/react-app/public",
+  port: 8080,
+  hot: true,
 };

@@ -8,10 +8,10 @@
 .card_connection::after {
   display: block;
   position: absolute;
-  content: '';
+  content: "";
   background: rgba(255, 255, 255, 0.4);
-  height:  var(--card_connection_radius);
-  width:  var(--card_connection_radius);
+  height: var(--card_connection_radius);
+  width: var(--card_connection_radius);
   border-radius: var(--card_connection_radius);
 }
 
@@ -20,23 +20,22 @@
 }
 .card_connection--top,
 .card_connection--bottom {
-  left: calc( 50% - var(--card_connection_radius));
+  left: calc(50% - var(--card_connection_radius));
 }
 
 .card_connection--left,
-.card_connection--right
- {
-    top: calc(50% - var(--card_connection_radius));
-    width: var(--card_connection_radius);
-    height: calc(var(--card_connection_radius) * 2);
+.card_connection--right {
+  top: calc(50% - var(--card_connection_radius));
+  width: var(--card_connection_radius);
+  height: calc(var(--card_connection_radius) * 2);
 }
 
 .card_connection--left {
-  left: calc( -1 * var(--card_connection_radius));
+  left: calc(-1 * var(--card_connection_radius));
 }
 
 .card_connection--right {
-  right: calc( -1 * var(--card_connection_radius));
+  right: calc(-1 * var(--card_connection_radius));
 }
 
 .card_connection--top::after,
@@ -55,7 +54,7 @@
   top: calc(0.5 * var(--card_connection_radius));
 }
 
-.card_connection--bottom::after{
+.card_connection--bottom::after {
   top: calc(-0.5 * var(--card_connection_radius));
 }
 
