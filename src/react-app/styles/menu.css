@@ -20,12 +20,8 @@
   cursor: pointer;
 }
 
-.menu .item:focus,
-.menu .item:hover {
+.menu .item:focus {
   color: white;
   opacity: 1;
-}
-
-.menu .item:focus {
   background: rgba(255, 255, 255, 0.2);
 }
