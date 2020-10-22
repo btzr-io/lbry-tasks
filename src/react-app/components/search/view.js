@@ -1,9 +1,15 @@
 import React from "react";
 import Icon from "@mdi/react";
 import actions from "@app/store/actions";
+import DropMenuButton from "@app/components/dropMenuButton";
 import { connect } from "unistore/react";
 import { TASK_STATUS, TASK_STATUS_TYPES } from "@app/constants/types";
-import { mdiPlusCircleOutline, mdiPlusCircle } from "@mdi/js";
+
+import {
+  mdiPlusCircleOutline,
+  mdiPlusCircle,
+  mdiPlusCircleMultiple,
+} from "@mdi/js";
 
 function StatusButton({ status }) {
   const { icon, color } = TASK_STATUS_TYPES[status];
@@ -124,12 +130,19 @@ function SearchInput({ onChange }) {
   );
 }
 
+const ITEMS = ["New task", "Import task", "Select template"];
+
 function Search({ tasks, searchTasksByTitle, searchResults }) {
   return (
     <div>
       <div className="panel_header">
         <SearchInput onChange={searchTasksByTitle} />
-        <AddItemButton />
+        <DropMenuButton
+          menuItems={ITEMS}
+          className={"button--add"}
+          icon={mdiPlusCircleOutline}
+          toggleIcon={mdiPlusCircle}
+        />
       </div>
       <SearchResults entries={tasks} results={searchResults.tasks} />
     </div>

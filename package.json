@@ -38,5 +38,8 @@
     "shx": "^0.3.2",
     "stockroom": "^1.0.1",
     "unistore": "^3.5.2"
+  },
+  "dependencies": {
+    "reakit": "^1.2.5"
   }
 }

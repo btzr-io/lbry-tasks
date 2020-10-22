@@ -67,12 +67,13 @@
 }
 
 .button {
+  appearance: none;
   margin: 0;
   border: 0;
+  padding: 0;
   cursor: pointer;
   background: 0;
   outline: 0;
-  appearance: none;
   text-align: center;
   color: inherit;
   display: flex;

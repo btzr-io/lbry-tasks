@@ -1,0 +1,27 @@
+.menu {
+  background: #424242;
+  outline: 0;
+  color: var(--subtitle-color);
+  width: 200px;
+  overflow: auto;
+  border-radius: 0.4em;
+}
+
+.menu:focus {
+  outline: 0;
+}
+
+.menu .item {
+  margin: 0;
+  padding: 0.48em 0.8em;
+  font-size: 0.9em;
+  outline: 0;
+  opacity: 0.8;
+}
+
+.menu .item:focus,
+.menu .item:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 1;
+}
