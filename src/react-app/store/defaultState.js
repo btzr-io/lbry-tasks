@@ -19,7 +19,7 @@ const defaultState = {
     [ID_4] : { title: 'Forked from template task 5', status: TASK_STATUS.FAILED, id: ID_4 },
   },
   searchResults: {
-    tasks: [],
+    tasks: "show_all",
   },
 }
 

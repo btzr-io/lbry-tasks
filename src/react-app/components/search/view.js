@@ -18,9 +18,10 @@ function SearchResultItem({title, status}) {
 }
 
 function SearchResults({ entries, results }) {
+  const items = results === "show_all" ? Object.keys(entries) : results
   return (
     <div className="panel_items">
-     { results.tasks.map(id => {
+     { items.map(id => {
           const task = entries[id]
           if (task) {
               const { id, title, status } = task
@@ -61,7 +62,7 @@ function Search({ tasks, searchTasksByTitle, searchResults }) {
   return (
     <div>
       <SearchInput onChange={searchTasksByTitle} />
-      <SearchResults entries={tasks} results={searchResults} />
+      <SearchResults entries={tasks} results={searchResults.tasks} />
     </div>
   )
 }
