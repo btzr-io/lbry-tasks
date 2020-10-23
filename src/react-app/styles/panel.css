@@ -2,7 +2,7 @@
   --card_bg: #2d2d2d;
 }
 .panel {
-  min-width: 200px;
+  min-width: 100px;
 
   height: 100%;
   box-sizing: border-box;
@@ -13,6 +13,8 @@
   display: flex;
   align-items: center;
   margin: 2.8em 1.6em;
+  position: relative;
+  z-index: 1;
 }
 
 .icon--button {
@@ -21,6 +23,7 @@
 
 .panel--left {
   max-width: 400px;
+  min-width: 280px;
   border-right: 2px solid var(--card_bg);
 }
 

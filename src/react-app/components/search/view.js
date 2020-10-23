@@ -1,15 +1,7 @@
 import React from "react";
 import Icon from "@mdi/react";
-import actions from "@app/store/actions";
-import DropMenuButton from "@app/components/dropMenuButton";
-import { connect } from "unistore/react";
+import CreationMenu from "@app/components/creationMenu";
 import { TASK_STATUS, TASK_STATUS_TYPES } from "@app/constants/types";
-
-import {
-  mdiPlusCircleOutline,
-  mdiPlusCircle,
-  mdiPlusCircleMultiple,
-} from "@mdi/js";
 
 function StatusButton({ status }) {
   const { icon, color } = TASK_STATUS_TYPES[status];
@@ -25,50 +17,6 @@ function StatusButton({ status }) {
     </button>
   );
 }
-
-const AddItemButton = connect(
-  [],
-  actions
-)(({ createNewTask }) => {
-  const [focus, setFocus] = React.useState(false);
-  const [hover, setHover] = React.useState(false);
-  const handleHover = () => {
-    setHover(true);
-  };
-
-  const handleNotHover = () => {
-    setHover(false);
-  };
-
-  const handleFocus = () => {
-    setFocus(true);
-  };
-
-  const handleNotFocus = () => {
-    setFocus(false);
-  };
-
-  const handleClick = () => {
-    createNewTask();
-  };
-
-  return (
-    <button
-      className="button button--add"
-      onMouseEnter={handleHover}
-      onFocus={handleFocus}
-      onBlur={handleNotFocus}
-      onClick={handleClick}
-      onMouseLeave={handleNotHover}
-    >
-      <Icon
-        path={!hover && !focus ? mdiPlusCircleOutline : mdiPlusCircle}
-        size={1.2}
-        className={"icon--button"}
-      />
-    </button>
-  );
-});
 
 function SearchResultItem({ title, status }) {
   return (
@@ -130,19 +78,12 @@ function SearchInput({ onChange }) {
   );
 }
 
-const ITEMS = ["New task", "Import task", "Select template"];
-
 function Search({ tasks, searchTasksByTitle, searchResults }) {
   return (
     <div>
       <div className="panel_header">
         <SearchInput onChange={searchTasksByTitle} />
-        <DropMenuButton
-          menuItems={ITEMS}
-          className={"button--add"}
-          icon={mdiPlusCircleOutline}
-          toggleIcon={mdiPlusCircle}
-        />
+        <CreationMenu />
       </div>
       <SearchResults entries={tasks} results={searchResults.tasks} />
     </div>

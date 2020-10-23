@@ -16,6 +16,7 @@ body {
 }
 
 :root {
+  --card-bg: #2d2d2d;
   --subtitle-color: #cecece;
   --label-color: #858585;
 }

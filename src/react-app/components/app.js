@@ -1,6 +1,7 @@
 import React from "react";
 import Icon from "@mdi/react";
 import Card from "@app/components/card";
+import ModalRouter from "@app/components/modalRouter";
 import TasksManager from "@app/components/tasksManager";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Card type="CYCLE" />
       </div>
       <div className="panel panel--side panel--right" />
+      <ModalRouter />
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import { TASK_STATUS } from "@app/constants/types";
+import MODAL from "@app/constants/modals";
 
 import { UniqueID } from "@app/utils";
 
@@ -9,7 +10,7 @@ const ID_3 = UniqueID();
 const ID_4 = UniqueID();
 
 const defaultState = {
-  count: 0,
+  modal: { id: MODAL.CREATE_TASK, show: false },
   tasks: {
     [ID_0]: { title: "Task 1", status: TASK_STATUS.INACTIVE, id: ID_0 },
     [ID_1]: { title: "New Task 2", status: TASK_STATUS.RUNING, id: ID_1 },

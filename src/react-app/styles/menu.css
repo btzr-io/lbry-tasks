@@ -1,10 +1,12 @@
 .menu {
-  background: #424242;
+  background: #393939;
   outline: 0;
   color: var(--subtitle-color);
   width: 200px;
   overflow: auto;
   border-radius: 0.4em;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  user-select: none;
 }
 
 .menu:focus {
@@ -16,12 +18,18 @@
   padding: 0.48em 0.8em;
   font-size: 0.9em;
   outline: 0;
-  opacity: 0.8;
+  opacity: 0.9;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
-.menu .item:focus {
+.menu .item[tabindex="0"] {
   color: white;
   opacity: 1;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.icon--menu-item {
+  margin-right: 0.6em;
 }

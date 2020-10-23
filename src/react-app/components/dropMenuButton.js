@@ -1,13 +1,8 @@
 import React from "react";
 import clsx from "clsx";
 import Icon from "@mdi/react";
-import {
-  Menu,
-  MenuItem,
-  MenuButton,
-  MenuSeparator,
-  useMenuState,
-} from "reakit/Menu";
+
+import { Menu, MenuItem, MenuButton, useMenuState } from "reakit/Menu";
 
 const defaultMenuState = {
   loop: true,
@@ -28,43 +23,40 @@ function DropMenuButton({
   className,
   menuState,
   menuItems = [],
+  onItemClick,
 }) {
   const menu = menuState || useMenuState(defaultMenuState);
-  const [focus, setFocus] = React.useState(false);
-  const [hover, setHover] = React.useState(false);
-  // Update....
+
   const handleButtonClick = React.useCallback((event) => {}, []);
 
-  const handleItemClick = React.useCallback((event) => {
-    window.alert(event.currentTarget.id);
-  }, []);
-
-  const handleHover = () => {
-    setHover(true);
-  };
-
-  const handleNotHover = () => {
-    setHover(false);
-  };
-
-  const handleFocus = () => {
-    setFocus(true);
-  };
-
-  const handleNotFocus = () => {
-    setFocus(false);
-  };
+  const handleItemClick = React.useCallback(
+    (event) => {
+      if (onItemClick) {
+        onItemClick(event.currentTarget.id);
+      }
+      menu.hide();
+    },
+    [onItemClick]
+  );
 
   const handleClick = () => {
     createNewTask();
   };
 
+  // Auto focus first menu item
+  React.useEffect(() => {
+    if (menu.visible) {
+      menu.first();
+    }
+  }, [menu.visible]);
+
   // If children aren't primitive values (like strings), memoize them with
   // React.useCallback
   const children = React.useCallback(
-    (itemProps) => (
+    ({ label, icon, ...itemProps }) => (
       <div {...itemProps} className={"item"}>
-        <span>{itemProps.id}</span>
+        {icon && <Icon path={icon} size={0.75} className={"icon--menu-item"} />}
+        {label && <span>{label}</span>}
       </div>
     ),
     []
@@ -73,7 +65,7 @@ function DropMenuButton({
   let buttonIcon = icon;
 
   if (icon && toggleIcon) {
-    buttonIcon = !hover && !focus ? icon : toggleIcon;
+    buttonIcon = !menu.visible ? icon : toggleIcon;
   }
 
   return (
@@ -81,19 +73,20 @@ function DropMenuButton({
       <MenuButton
         {...menu}
         className={clsx("button", className)}
-        onBlur={handleNotFocus}
-        onFocus={handleFocus}
         onClick={handleButtonClick}
-        onMouseEnter={handleHover}
-        onMouseLeave={handleNotHover}
       >
         {buttonIcon && (
           <Icon path={buttonIcon} size={1.2} className={"icon--button"} />
         )}
       </MenuButton>
       <Menu {...menu} {...defaultMenuProps}>
-        {menuItems.map((id) => (
-          <MenuItem {...menu} key={id} id={id} onClick={handleItemClick}>
+        {menuItems.map((itemData) => (
+          <MenuItem
+            {...menu}
+            key={itemData.id}
+            onClick={handleItemClick}
+            {...itemData}
+          >
             {children}
           </MenuItem>
         ))}
