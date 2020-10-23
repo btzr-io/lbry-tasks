@@ -1,0 +1,35 @@
+.form label {
+  display: block;
+  font-size: 0.94em;
+  margin: 0.64em 0.2em;
+}
+
+.form {
+  padding: 1.8em;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+.form input[type="text"] {
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.52em 0.86em;
+  border-radius: 0.4em;
+  color: inherit;
+  box-sizing: border-box;
+  width: 100%;
+  font-family: inherit;
+  appearance: none;
+  outline: 0;
+}
+
+.form input[type="text"]:focus {
+    border-color: rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.form input::placeholder {
+  color: var(--subtitle-color);
+  opacity: 0.75;
+}

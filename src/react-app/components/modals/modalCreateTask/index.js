@@ -14,7 +14,7 @@ function ModalCreateTask() {
     onValidate: (values) => {
       if (!values.name) {
         const errors = {
-          name: "How can we be friends without knowing your name?",
+          name: "Enter a valid name",
         };
         throw errors;
       }
@@ -24,13 +24,14 @@ function ModalCreateTask() {
     },
   });
   return (
-    <Form {...form}>
+    <Form {...form} className="form">
       <FormLabel {...form} name="name">
         Name
       </FormLabel>
-      <FormInput {...form} name="name" placeholder="John Doe" />
-      <FormMessage {...form} name="name" />
+      <FormInput {...form} type="text" name="name" placeholder="John Doe" />
+      { /* <FormMessage {...form} name="name" />
       <FormSubmitButton {...form}>Submit</FormSubmitButton>
+       */  }
     </Form>
   );
 }
