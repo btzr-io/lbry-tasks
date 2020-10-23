@@ -19,13 +19,18 @@ const defaultMenuProps = {
 
 function DropMenuButton({
   icon,
+  iconSize = 1.15,
+  name,
   toggleIcon,
   className,
   menuState,
   menuItems = [],
+  menuOptions = {},
   onItemClick,
+  buttonContent,
 }) {
-  const menu = menuState || useMenuState(defaultMenuState);
+  const menu =
+    menuState || useMenuState({ ...defaultMenuState, ...menuOptions });
 
   const handleButtonClick = React.useCallback((event) => {}, []);
 
@@ -72,11 +77,13 @@ function DropMenuButton({
     <React.Fragment>
       <MenuButton
         {...menu}
-        className={clsx("button", className)}
+        name={name}
         onClick={handleButtonClick}
+        className={clsx("button", className)}
       >
+        {buttonContent}
         {buttonIcon && (
-          <Icon path={buttonIcon} size={1.2} className={"icon--button"} />
+          <Icon path={buttonIcon} size={iconSize} className={"icon--button"} />
         )}
       </MenuButton>
       <Menu {...menu} {...defaultMenuProps}>

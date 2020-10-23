@@ -1,12 +1,35 @@
 import React from "react";
+import Input from "@app/components/form/input";
+import Select from "@app/components/form/select";
 import {
   unstable_useFormState as useFormState,
   unstable_Form as Form,
-  unstable_FormLabel as FormLabel,
   unstable_FormInput as FormInput,
+  unstable_FormLabel as FormLabel,
   unstable_FormMessage as FormMessage,
   unstable_FormSubmitButton as FormSubmitButton,
 } from "reakit/Form";
+
+const MENU_ITEM_ID = {
+  NEW: "NEW",
+  IMPORT: "IMPORT",
+  SELECT: "SELECT",
+};
+
+const CYCLE_OPTIONS = [
+  {
+    id: MENU_ITEM_ID.NEW,
+    label: "Run once",
+  },
+  {
+    id: MENU_ITEM_ID.IMPORT,
+    label: "Auto loop",
+  },
+  {
+    id: MENU_ITEM_ID.SELECT,
+    label: "Custom loop",
+  },
+];
 
 function ModalCreateTask() {
   const form = useFormState({
@@ -25,13 +48,11 @@ function ModalCreateTask() {
   });
   return (
     <Form {...form} className="form">
-      <FormLabel {...form} name="name">
-        Name
-      </FormLabel>
-      <FormInput {...form} type="text" name="name" placeholder="John Doe" />
-      { /* <FormMessage {...form} name="name" />
+      <Input form={form} type="text" label="Name" name="name" />
+      <Select label="Cycle" name="cycle" options={CYCLE_OPTIONS} />
+      {/* <FormMessage {...form} name="name" />
       <FormSubmitButton {...form}>Submit</FormSubmitButton>
-       */  }
+       */}
     </Form>
   );
 }
