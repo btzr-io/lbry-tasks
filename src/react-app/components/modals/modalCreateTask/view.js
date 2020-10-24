@@ -1,14 +1,12 @@
 import React from "react";
 import Input from "@app/components/form/input";
 import Select from "@app/components/form/select";
+import Checkbox from "@app/components/form/checkbox";
 
 import {
   unstable_useFormState as useFormState,
   unstable_Form as Form,
-  unstable_FormInput as FormInput,
-  unstable_FormLabel as FormLabel,
   unstable_FormMessage as FormMessage,
-  unstable_FormCheckbox as FormCheckbox,
   unstable_FormSubmitButton as FormSubmitButton,
 } from "reakit/Form";
 
@@ -93,12 +91,7 @@ function ModalCreateTask({ closeModal, createTask }) {
       </div>
 
       <div className="form_row">
-        <div className="form_checkbox">
-          <FormCheckbox {...form} name="runOnStartup" />
-          <FormLabel {...form} name="runOnStartup">
-            Auto-run on startup
-          </FormLabel>
-        </div>
+        <Checkbox form={form} name="runOnStartup" label="Auto-run on startup" />
       </div>
 
       <div className="modal_actions">

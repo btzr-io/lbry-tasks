@@ -9,10 +9,42 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  min-height: 24px;
 }
+
+.form_checkbox input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+.form_checkbox .checkbox {
+  position: absolute;
+  opacity: 0.64;
+  color: var(--subtitle-color);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-self: center;
+}
+
+.form_checkbox input[aria-checked="true"] ~ .checkbox {
+  color: var(--input_accent_color);
+  opacity: 1;
+}
+
+.form_checkbox input:focus ~ .checkbox {
+  opacity: 1;
+}
+
 .form_checkbox label {
   margin: 0;
-  margin-left: 1em;
+  padding-left: 2.5em;
+  cursor: pointer;
+  position: relative;
+  max-height: 24px;
 }
 
 .form {
