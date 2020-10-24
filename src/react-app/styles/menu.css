@@ -1,7 +1,6 @@
 .menu {
-  background: #393939;
+  background: #484848;
   outline: 0;
-  color: var(--subtitle-color);
   min-width: 180px;
   overflow: auto;
   border-radius: 0.4em;
@@ -16,10 +15,9 @@
 
 .menu .item {
   margin: 0;
-  padding: 0.48em 0.8em;
+  padding: 0.54em 0.8em;
   font-size: 0.9em;
   outline: 0;
-  opacity: 0.9;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -28,7 +26,7 @@
 .menu .item[tabindex="0"] {
   color: white;
   opacity: 1;
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--input_accent_color); /* rgba(255, 255, 255, 0.15); */
 }
 
 .icon--menu-item {

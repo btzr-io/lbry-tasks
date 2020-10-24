@@ -78,11 +78,11 @@ function SearchInput({ onChange }) {
   );
 }
 
-function Search({ tasks, searchTasksByTitle, searchResults }) {
+function Search({ tasks, searchTasksByName, searchResults }) {
   return (
     <div>
       <div className="panel_header">
-        <SearchInput onChange={searchTasksByTitle} />
+        <SearchInput onChange={searchTasksByName} />
         <CreationMenu />
       </div>
       <SearchResults entries={tasks} results={searchResults.tasks} />

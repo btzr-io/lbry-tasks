@@ -3,7 +3,7 @@ import clsx from "clsx";
 import Icon from "@mdi/react";
 import { Button } from "reakit/Button";
 import { Portal } from "reakit/Portal";
-import { mdiClose } from "@mdi/js";
+import { mdiCloseThick } from "@mdi/js";
 
 import {
   Dialog,
@@ -15,7 +15,7 @@ import {
 function CloseModalButton({ onClick }) {
   return (
     <Button className="button button--close-modal" onClick={onClick}>
-      <Icon path={mdiClose} size={0.94} />
+      <Icon path={mdiCloseThick} size={0.75} />
     </Button>
   );
 }

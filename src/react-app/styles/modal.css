@@ -14,7 +14,7 @@
 .modal {
   width: 64%;
   outline: 0;
-  max-width: 480px;
+  max-width: 580px;
   min-width: 320px;
   background: var(--card-bg);
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
@@ -24,14 +24,13 @@
 }
 
 .modal_header {
-  padding: 1.64em;
+  padding: 1.24em;
   display: flex;
   position: relative;
   align-items: center;
   text-align: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
-
 
 .modal_header h3 {
   margin: 0;
@@ -45,5 +44,5 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin: 2em 0;
+  margin: 1.75em 0;
 }

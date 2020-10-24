@@ -96,7 +96,7 @@ function ModalCreateTask({ closeModal, createTask }) {
         <div className="form_checkbox">
           <FormCheckbox {...form} name="runOnStartup" />
           <FormLabel {...form} name="runOnStartup">
-            Auto run on startup
+            Auto-run on startup
           </FormLabel>
         </div>
       </div>

@@ -1,11 +1,11 @@
 import FuzzySearch from "fuzzy-search";
 
 const Actions = (store) => ({
-  searchTasksByTitle: ({ tasks, searchResults }, text) => {
+  searchTasksByName: ({ tasks, searchResults }, text) => {
     const entries = Object.values(tasks);
     if (entries && entries.length) {
       if (text && text.length) {
-        const searcher = new FuzzySearch(entries, ["title"], {
+        const searcher = new FuzzySearch(entries, ["name"], {
           caseSensitive: false,
         });
         const results = searcher.search(text).map(({ id }) => id);

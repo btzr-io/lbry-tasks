@@ -1,22 +1,23 @@
 .form label {
   display: block;
   font-size: 0.86em;
-  margin: 0.64em 0.2em;
-  margin-top: 1.48em;
+  margin: 0 0.2em;
+  margin-bottom: 0.64em;
 }
 
 .form_checkbox {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-top: 2em;
 }
 .form_checkbox label {
-  margin: 0 0.4em;
+  margin: 0;
+  margin-left: 1em;
 }
 
 .form {
-  padding: 0.25em 1.8em;
+  padding: 0 1.8em;
+  padding-top: 1.75em;
   width: 100%;
   box-sizing: border-box;
 }
@@ -31,7 +32,7 @@
 .form input[type="text"],
 .form input[type="number"] {
   border: 2px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.08);
   padding: 0.32em 0.86em;
   border-radius: 0.4em;
   color: inherit;
@@ -40,15 +41,17 @@
   font-family: inherit;
   appearance: none;
   outline: 0;
-  min-height: 38px;
+  min-height: 35px;
   opacity: 1;
+  margin: 0;
 }
 
+.form_select:focus,
+.form_select[aria-expanded="true"],
 .form input[type="text"]:focus,
-.form input[type="number"]:focus,
-.form_select[aria-expanded="true"] {
-  border-color: rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.15);
+.form input[type="number"]:focus {
+  border-color: rgba(255, 255, 255, 0.28);
+  background-color: rgba(255, 255, 255, 0.16);
 }
 
 .form input::placeholder {
@@ -60,9 +63,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0.4em 0;
+  margin: 1.75em 0;
 }
 
 .form_cell {
-  width: calc(50% - 0.8em);
+  width: calc(50% - 0.8525em);
 }
