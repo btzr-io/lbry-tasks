@@ -2,6 +2,8 @@ import React from "react";
 import Input from "@app/components/form/input";
 import Select from "@app/components/form/select";
 import Checkbox from "@app/components/form/checkbox";
+import { Button } from "reakit/Button";
+import { mdiSync, mdiSyncAlert, mdiSyncOff } from "@mdi/js";
 
 import {
   unstable_useFormState as useFormState,
@@ -9,8 +11,6 @@ import {
   unstable_FormMessage as FormMessage,
   unstable_FormSubmitButton as FormSubmitButton,
 } from "reakit/Form";
-
-import { Button } from "reakit/Button";
 
 const CYCLE = {
   LOOP: "LOOP",
@@ -22,14 +22,17 @@ const CYCLE_OPTIONS = [
   {
     id: CYCLE.ONE_TIME,
     label: "One time",
+    icon: mdiSyncOff,
   },
   {
     id: CYCLE.LOOP,
     label: "Loop",
+    icon: mdiSync,
   },
   {
     id: CYCLE.RETRY,
     label: "Retry",
+    icon: mdiSyncAlert,
   },
 ];
 

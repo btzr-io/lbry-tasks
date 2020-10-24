@@ -1,31 +1,17 @@
 import React from "react";
-import Icon from "@mdi/react";
+import TaskMenu from "@app/components/taskMenu";
+import TaskStatusButton from "@app/components/taskStatusButton";
 import CreationMenu from "@app/components/creationMenu";
-import { TASK_STATUS, TASK_STATUS_TYPES } from "@app/constants/types";
 
-function StatusButton({ status }) {
-  const { icon, color } = TASK_STATUS_TYPES[status];
-  return (
-    <button className="button button--status">
-      <Icon
-        path={icon}
-        data-color={color}
-        size={1}
-        className={"status_icon"}
-        spin={status === TASK_STATUS.RUNING && 0.64}
-      />
-    </button>
-  );
-}
-
-function SearchResultItem({ name, status }) {
+function SearchResultItem({ id, name, status }) {
   return (
     <div className="panel_item" tabIndex={0}>
       <div className="item_data">
         <div className="item_title">
-          <StatusButton status={status} />
+          <TaskStatusButton id={id} status={status} />
           <span>{name}</span>
         </div>
+        <TaskMenu id={id} />
       </div>
     </div>
   );
@@ -36,9 +22,8 @@ function SearchResults({ entries, results }) {
   return (
     <div className="panel_items">
       {items.map((id) => {
-        const item = entries[id];
-        if (item) {
-          const { id, ...itemData } = item;
+        const itemData = entries[id];
+        if (itemData) {
           return <SearchResultItem key={id} {...itemData} />;
         }
       })}

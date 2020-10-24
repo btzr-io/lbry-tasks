@@ -1,15 +1,16 @@
 .search_input {
   color: var(--subtitle-color);
-  border: 2px solid rgba(255, 255, 255, 0.18);
-  background-color: rgba(200, 200, 200, 0.064);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(220, 220, 220, 0.04);
   padding: 0.4em 0.8em;
   border-radius: 1em;
   box-sizing: border-box;
+  width: 100%;
 }
 
 .search_input[data-focus="true"] {
-  border-color: rgba(255, 255, 255, 0.26);
-  background-color: rgba(220, 220, 220, 0.12);
+  border-color: rgba(255, 255, 255, 0.32);
+  background-color: rgba(220, 220, 220, 0.08);
   color: white;
 }
 

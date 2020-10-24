@@ -12,7 +12,7 @@
 .panel_header {
   display: flex;
   align-items: center;
-  margin: 2.8em 1.6em;
+  margin: 2.8em 1.2em;
   position: relative;
   z-index: 1;
 }
@@ -49,6 +49,12 @@
 
 .panel_item:focus .item_status {
   color: var(--subtitle-color);
+}
+
+.item_data {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .item_title {

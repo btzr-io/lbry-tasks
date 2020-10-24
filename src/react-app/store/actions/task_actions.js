@@ -11,6 +11,18 @@ const Actions = (store) => ({
       },
     };
   },
+  deleteTask: ({ tasks }, taskId) => {
+    const { [taskId]: deleted, ...updateTasks } = tasks;
+    return { tasks: updateTasks };
+  },
+  startTask: ({ tasks }, taskId) => {
+    return {
+      tasks: {
+        ...tasks,
+        [taskId]: { ...tasks[taskId], status: TASK_STATUS.RUNING },
+      },
+    };
+  },
 });
 
 export default Actions;

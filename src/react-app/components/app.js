@@ -8,11 +8,7 @@ function App() {
   return (
     <div className="app">
       <TasksManager />
-      <div className="panel graph-view">
-        <Card type="EVENT" />
-        <Card type="WAIT" />
-        <Card type="CYCLE" />
-      </div>
+      <div className="panel graph-view"></div>
       <div className="panel panel--side panel--right" />
       <ModalRouter />
     </div>
