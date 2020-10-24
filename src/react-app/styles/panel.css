@@ -68,35 +68,3 @@
 .status_icon {
   color: var(--accent_color);
 }
-
-.button {
-  appearance: none;
-  margin: 0;
-  border: 0;
-  padding: 0;
-  cursor: pointer;
-  background: 0;
-  outline: 0;
-  text-align: center;
-  color: inherit;
-  display: flex;
-  align-items: center;
-  opacity: 0.75;
-}
-
-.button:focus,
-.button:hover {
-  opacity: 1;
-}
-
-.button--add {
-  color: var(--label-color);
-}
-
-.button--status {
-  margin-right: 0.8em;
-}
-
-*:focus .button--status {
-  opacity: 1;
-}

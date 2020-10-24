@@ -1,7 +1,7 @@
 import React from "react";
 import Icon from "@mdi/react";
 import clsx from "clsx";
-import { CARD_TYPES } from "@app/constants/types.js";
+import { CARD_TYPES } from "@app/constants/types";
 
 function ConnectionPoint({ direction, active }) {
   return (

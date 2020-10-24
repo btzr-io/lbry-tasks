@@ -3,7 +3,7 @@ import MODAL from "@app/constants/modals";
 
 const MODALS = {
   [MODAL.CREATE_TASK]: {
-    title: "Create new task",
+    title: "Create task",
     ModalView: ModalCreateTask,
   },
 };

@@ -18,13 +18,13 @@ function StatusButton({ status }) {
   );
 }
 
-function SearchResultItem({ title, status }) {
+function SearchResultItem({ name, status }) {
   return (
     <div className="panel_item" tabIndex={0}>
       <div className="item_data">
         <div className="item_title">
           <StatusButton status={status} />
-          <span>{title}</span>
+          <span>{name}</span>
         </div>
       </div>
     </div>
@@ -36,10 +36,10 @@ function SearchResults({ entries, results }) {
   return (
     <div className="panel_items">
       {items.map((id) => {
-        const task = entries[id];
-        if (task) {
-          const { id, title, status } = task;
-          return <SearchResultItem key={id} title={title} status={status} />;
+        const item = entries[id];
+        if (item) {
+          const { id, ...itemData } = item;
+          return <SearchResultItem key={id} {...itemData} />;
         }
       })}
     </div>

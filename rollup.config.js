@@ -8,7 +8,6 @@ import commonjs from "@rollup/plugin-commonjs";
 import { terser } from "rollup-plugin-terser";
 
 const root = path.resolve(__dirname);
-const extensions = [".js", ".jsx"];
 
 let env = function () {
   return {
@@ -45,7 +44,7 @@ let config = {
       hot: process.env.NODE_ENV === "development",
       filename: "styles.css",
     }),
-    resolve({ extensions }),
+    resolve(),
     commonjs(),
     process.env.NODE_ENV === "development" && refresh(),
   ],

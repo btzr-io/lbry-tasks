@@ -16,9 +16,10 @@ body {
 }
 
 :root {
-  --card-bg: #2A2A2A;
+  --card-bg: #2a2a2a;
   --subtitle-color: #cecece;
   --label-color: #858585;
+  --input_accent_color: #4a69bd;
 }
 
 .app {
