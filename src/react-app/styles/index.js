@@ -8,3 +8,4 @@ import "@app/styles/modal.css";
 import "@app/styles/scrollbar.css";
 import "@app/styles/card_connection.css";
 import "@app/styles/search_input.css";
+import "@app/styles/editor.css";

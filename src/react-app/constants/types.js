@@ -21,8 +21,8 @@ export const CARD_TYPES = {
 };
 
 export const TASK_STATUS_TYPES = {
-  RUNING: { name: "Runing", icon: mdiSyncCircle, color: "yellow" },
   INACTIVE: { name: "Inactive", icon: mdiPlayCircleOutline, color: "gray" },
+  RUNING: { name: "Runing", icon: mdiSyncCircle, color: "yellow" },
   COMPLETED: { name: "Completed", icon: mdiCheckCircle, color: "green" },
   FAILED: { name: "Failed", icon: mdiAlertCircle, color: "red" },
 };

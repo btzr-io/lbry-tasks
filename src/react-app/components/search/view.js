@@ -81,7 +81,7 @@ function Search({ tasks, searchTasksByName, searchResults }) {
   };
 
   return (
-    <div>
+    <React.Fragment>
       <FilterTabs onChange={handleFilterChange} filters={STATUS_FILTERS} />
       <div className="panel_header">
         <SearchInput onChange={searchTasksByName} />
@@ -92,7 +92,7 @@ function Search({ tasks, searchTasksByName, searchResults }) {
         filter={statusFilter}
         results={searchResults.tasks}
       />
-    </div>
+    </React.Fragment>
   );
 }
 
