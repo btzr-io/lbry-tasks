@@ -22,9 +22,9 @@ export const CARD_TYPES = {
 
 export const TASK_STATUS_TYPES = {
   RUNING: { name: "Runing", icon: mdiSyncCircle, color: "yellow" },
-  FAILED: { name: "Failed", icon: mdiAlertCircle, color: "red" },
   INACTIVE: { name: "Inactive", icon: mdiPlayCircleOutline, color: "gray" },
   COMPLETED: { name: "Completed", icon: mdiCheckCircle, color: "green" },
+  FAILED: { name: "Failed", icon: mdiAlertCircle, color: "red" },
 };
 
 const TASK_STATUS_ENTRIES = Object.keys(TASK_STATUS_TYPES).map((key) => [
