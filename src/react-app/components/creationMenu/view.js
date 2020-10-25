@@ -19,12 +19,12 @@ const MENU_ITEMS = [
   {
     id: MENU_ITEM_ID.NEW,
     icon: mdiPlus,
-    label: "New task",
+    label: "New",
   },
   {
     id: MENU_ITEM_ID.IMPORT,
     icon: mdiImport,
-    label: "Import task",
+    label: "Import",
   },
   {
     id: MENU_ITEM_ID.SELECT,
@@ -43,6 +43,7 @@ function CreationMenu({ openModal }) {
   return (
     <DropMenuButton
       menuItems={MENU_ITEMS}
+      iconSize={0.96}
       className={"button--add"}
       icon={mdiPlusCircleOutline}
       toggleIcon={mdiPlusCircle}

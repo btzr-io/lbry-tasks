@@ -9,7 +9,7 @@ function App() {
     <div className="app">
       <TasksManager />
       <div className="panel graph-view"></div>
-      <div className="panel panel--side panel--right" />
+      {/* <div className="panel panel--side panel--right" /> */}
       <ModalRouter />
     </div>
   );

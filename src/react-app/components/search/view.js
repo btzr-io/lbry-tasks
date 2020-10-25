@@ -25,7 +25,7 @@ function SearchResults({ entries, filter, results }) {
     <div className="panel_items">
       {items.map((id) => {
         const itemData = entries[id];
-        if (itemData && (filter === "ALL" || filter === itemData.status )) {
+        if (itemData && (filter === "ALL" || filter === itemData.status)) {
           return <SearchResultItem key={id} {...itemData} />;
         }
       })}
@@ -87,7 +87,11 @@ function Search({ tasks, searchTasksByName, searchResults }) {
         <SearchInput onChange={searchTasksByName} />
         <CreationMenu />
       </div>
-      <SearchResults entries={tasks} filter={statusFilter} results={searchResults.tasks} />
+      <SearchResults
+        entries={tasks}
+        filter={statusFilter}
+        results={searchResults.tasks}
+      />
     </div>
   );
 }

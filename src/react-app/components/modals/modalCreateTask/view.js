@@ -44,6 +44,7 @@ function ModalCreateTask({ closeModal, createTask }) {
       maxQuote: 0,
       runOnStartup: false,
     },
+    resetOnSubmitSucceed: true,
     onValidate: (values) => {
       const errors = {};
 
