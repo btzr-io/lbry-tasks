@@ -6,6 +6,7 @@ const Actions = (store) => ({
     if (entries && entries.length) {
       if (text && text.length) {
         const searcher = new FuzzySearch(entries, ["name"], {
+          sort: true,
           caseSensitive: false,
         });
         const results = searcher.search(text).map(({ id }) => id);

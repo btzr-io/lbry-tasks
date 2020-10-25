@@ -12,7 +12,7 @@
 .panel_header {
   display: flex;
   align-items: center;
-  margin: 2.8em 1.2em;
+  margin: 1.8em 1.4em;
   position: relative;
   z-index: 1;
 }
@@ -33,12 +33,12 @@
 }
 
 .panel_items {
-  margin: 0.8em 0;
+  margin: 0;
 }
 
 .panel_item {
   font-size: 0.96em;
-  padding: 0.8em 1.2em;
+  padding: 0.8em 1.4em;
   color: var(--label-color);
 }
 .panel_item:focus {
@@ -60,6 +60,7 @@
 .item_title {
   display: flex;
   align-items: center;
+  font-size: 0.9em;
 }
 
 .item_title span {

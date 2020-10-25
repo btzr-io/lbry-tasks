@@ -8,13 +8,11 @@ import {
 
 export const CARD_TYPES = {
   WAIT: { icon: mdiClockOutline, color: "blue", title: "Wait" },
-
   EVENT: {
     icon: mdiExport,
     title: "Event",
     color: "yellow",
   },
-
   CYCLE: {
     icon: mdiRepeat,
     color: "purple",

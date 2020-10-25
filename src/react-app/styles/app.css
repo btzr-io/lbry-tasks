@@ -1,3 +1,11 @@
+:root {
+  --bg-color: #191919;
+  --card-bg: #2a2a2a;
+  --subtitle-color: #cecece;
+  --label-color: #aaa;
+  --input_accent_color: #4a69bd;
+}
+
 html,
 body,
 #app,
@@ -10,7 +18,7 @@ body,
 html,
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background: #191919;
+  background-color: var(--bg-color);
   color: #fff;
   font-family: "Inter", sans-serif;
 }
@@ -20,13 +28,6 @@ h2,
 h3,
 h4 {
   font-weight: 600;
-}
-
-:root {
-  --card-bg: #2a2a2a;
-  --subtitle-color: #cecece;
-  --label-color: #858585;
-  --input_accent_color: #4a69bd;
 }
 
 .app {

@@ -15,9 +15,9 @@ function TaskStatusButton({ id, status, startTask }) {
       <Icon
         path={icon}
         data-color={color}
-        size={1}
+        size={0.8}
         className={"status_icon"}
-        spin={status === TASK_STATUS.RUNING && 0.64}
+        spin={status === TASK_STATUS.RUNING && 0.72}
       />
     </Button>
   );

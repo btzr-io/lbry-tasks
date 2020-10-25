@@ -1,4 +1,6 @@
 import React from "react";
+import { TASK_STATUS_TYPES } from "@app/constants/types";
+import FilterTabs from "@app/components/FilterTabs";
 import TaskMenu from "@app/components/taskMenu";
 import TaskStatusButton from "@app/components/taskStatusButton";
 import CreationMenu from "@app/components/creationMenu";
@@ -17,13 +19,13 @@ function SearchResultItem({ id, name, status }) {
   );
 }
 
-function SearchResults({ entries, results }) {
+function SearchResults({ entries, filter, results }) {
   const items = results === "show_all" ? Object.keys(entries) : results;
   return (
     <div className="panel_items">
       {items.map((id) => {
         const itemData = entries[id];
-        if (itemData) {
+        if (itemData && (filter === "ALL" || filter === itemData.status )) {
           return <SearchResultItem key={id} {...itemData} />;
         }
       })}
@@ -63,14 +65,29 @@ function SearchInput({ onChange }) {
   );
 }
 
+let STATUS_FILTERS = [{ id: "ALL", label: "All" }];
+
+STATUS_FILTERS = [
+  ...STATUS_FILTERS,
+  ...Object.entries(TASK_STATUS_TYPES).map(([id, status]) => {
+    return { id, label: status.name };
+  }),
+];
+
 function Search({ tasks, searchTasksByName, searchResults }) {
+  const [statusFilter, setStatusFilter] = React.useState("all");
+  const handleFilterChange = (filter) => {
+    setStatusFilter(filter);
+  };
+
   return (
     <div>
+      <FilterTabs onChange={handleFilterChange} filters={STATUS_FILTERS} />
       <div className="panel_header">
         <SearchInput onChange={searchTasksByName} />
         <CreationMenu />
       </div>
-      <SearchResults entries={tasks} results={searchResults.tasks} />
+      <SearchResults entries={tasks} filter={statusFilter} results={searchResults.tasks} />
     </div>
   );
 }
